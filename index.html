@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+  </head>
+  <body>
+    <div class="header">
+      <header style="text-align: center" id="header">
+        <h1 id="position" onclick="showIntroduction()"><i>Web Developer</i></h1>
+      </header>
+      <div style="background-color: ghostwhite">
+        <h1 id="get-start" style="display: none">
+          let's start to know about me...
+        </h1>
+      </div>
+    </div>
+    <div
+      id="education-detail"
+      style="
+        background-color: #aa80ac;
+        width: auto;
+        height: auto;
+        padding: 2%;
+        border-radius: 8px;
+      "
+    >
+      <div style="display: flex; justify-content: space-between">
+        <h2 onclick="showEducationDetails()">Education</h2>
+        <h2 onclick="showTechnicalSkills()">Technical skill</h2>
+      </div>
+
+      <h3 class="education-text">Completed SSC in 2015 with 66.40%</h3>
+      <h3 class="education-text">Completed HSC in 2017 with 49.60%</h3>
+      <h3 class="education-text">Completed BSC IT in 2020 with 7.49 CGPI</h3>
+
+      <h3 class="Technical-skills">
+        front-end : Angular, React.js, React native, html
+      </h3>
+      <h3 class="Technical-skills">back-end: nest.js & database: Neo4j</h3>
+      <h3 class="Technical-skills">dev-ops: AWS, expo, Git-Hub pages</h3>
+    </div>
+
+    <div></div>
+    <script>
+      function showIntroduction() {
+        const header = document.getElementById("header");
+        const position = document.getElementById("position");
+        const getStart = document.getElementById("get-start");
+        header.style.color = "white";
+        position.classList.add("animated");
+        getStart.style.display = "block";
+      }
+
+      const technicalSkillsText =
+        document.getElementsByClassName("Technical-skills");
+      const educationText = document.getElementsByClassName("education-text");
+
+      function showEducationDetails() {
+        for (let i = 0; i < educationText.length && i < technicalSkillsText.length; i++) {
+          educationText[i].style.display = "block";
+          technicalSkillsText[i].style.display = "none";
+          educationText[i].style.width = "100%";
+        }
+      }
+
+      function showTechnicalSkills() {
+        for (let i = 0; i < technicalSkillsText.length; i++) {
+          technicalSkillsText[i].style.display = "block";
+          educationText[i].style.display = "none";
+          technicalSkillsText[i].style.width = "100%";
+        }
+        
+      }
+    </script>
+
+    <style>
+      header {
+        background: rgb(238, 174, 202);
+        background: radial-gradient(
+          circle,
+          rgba(238, 174, 202, 1) 0%,
+          rgba(148, 187, 233, 1) 100%
+        );
+        border-radius: 8px 8px 8px 8px;
+        height: fit-content;
+        width: 100%;
+      }
+
+      @keyframes moveAnimation {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(10%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .animated {
+        animation: moveAnimation 2s linear infinite;
+      }
+
+      .education-text {
+        display: none;
+      }
+      .Technical-skills {
+        display: none;
+      }
+    </style>
+  </body>
+</html>
