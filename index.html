@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
   </head>
-  <body style="background-color: #a19ea1;">
+  <body style="background-color: #a19ea1">
     <div class="header">
       <header style="text-align: center" id="header">
         <h1 id="position" onclick="showIntroduction()"><i>Web Developer</i></h1>
@@ -66,11 +66,16 @@
         currently working as Software Developer in network people services
         Technologies.
       </h3>
-      <h3 class="project-text">in network people services Technologies.</h3>
+      <h3 class="project-text" onmouseover="projectList()">
+        in network people services Technologies.
+      </h3>
       <h3 class="project-text">in Robotec.</h3>
     </div>
 
-
+    <div class="Project">
+      <p>parking-android-app</p>
+      <p>school-web-app</p>
+    </div>
 
     <script>
       function showIntroduction() {
@@ -87,6 +92,7 @@
       const educationText = document.getElementsByClassName("education-text");
       const experienceText = document.getElementsByClassName("experience-text");
       const projectText = document.getElementsByClassName("project-text");
+      const project = document.getElementsByClassName("Project");
 
       function showEducationDetails() {
         for (
@@ -116,11 +122,18 @@
         }
       }
 
-      function showProjects(){
+      function showProjects() {
         for (let i = 0; i < projectText.length; i++) {
           projectText[i].style.display = "block";
           experienceText[i].style.display = "none";
           projectText[i].style.width = "100%";
+        }
+      }
+
+      function projectList() {
+        for (let i = 0; i < projectText.length; i++) {
+          project[i].style.display = "block";
+          project[i].style.width = "100%";
         }
       }
     </script>
@@ -167,8 +180,14 @@
       .experience-text {
         display: none;
       }
-      .project-text{
+      .project-text {
         display: none;
+      }
+      .Project {
+        display: none;
+        background-color: #aa80ac;
+        border-radius: 8px;
+        text-align: center;
       }
     </style>
   </body>
