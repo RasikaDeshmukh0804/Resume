@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
   </head>
-  <body style="background-color: #a19ea1">
+  <body style="background-color: #f6f6f6">
     <div class="header">
       <header style="text-align: center" id="header">
         <h1 id="position" onclick="showIntroduction()"><i>Web Developer</i></h1>
@@ -19,7 +19,7 @@
     <div
       id="education-detail"
       style="
-        background-color: #aa80ac;
+        background-color: #dddbdd;
         width: auto;
         height: auto;
         border-radius: 8px;
@@ -47,7 +47,7 @@
     <div
       id="experience"
       style="
-        background-color: #aa80ac;
+        background-color: #dddbdd;
         width: auto;
         height: auto;
         border-radius: 8px;
@@ -131,9 +131,8 @@
       }
 
       function projectList() {
-        for (let i = 0; i < projectText.length; i++) {
+        for (let i = 0; i < project.length; i++) {
           project[i].style.display = "block";
-          project[i].style.width = "100%";
         }
       }
     </script>
@@ -185,7 +184,7 @@
       }
       .Project {
         display: none;
-        background-color: #aa80ac;
+        background-color: #dddbdd;
         border-radius: 8px;
         text-align: center;
       }
