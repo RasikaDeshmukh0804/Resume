@@ -22,13 +22,15 @@
         background-color: #aa80ac;
         width: auto;
         height: auto;
-        padding: 2%;
         border-radius: 8px;
+        padding: 2%;
       "
     >
       <div style="display: flex; justify-content: space-between">
-        <h2 onclick="showEducationDetails()">Education</h2>
-        <h2 onclick="showTechnicalSkills()">Technical skill</h2>
+        <h2 onclick="showEducationDetails()" class="title-text">Education</h2>
+        <h2 onclick="showTechnicalSkills()" class="title-text">
+          Technical skill
+        </h2>
       </div>
 
       <h3 class="education-text">Completed SSC in 2015 with 66.40%</h3>
@@ -42,7 +44,34 @@
       <h3 class="Technical-skills">dev-ops: AWS, expo, Git-Hub pages</h3>
     </div>
 
-    <div></div>
+    <div
+      id="experience"
+      style="
+        background-color: #aa80ac;
+        width: auto;
+        height: auto;
+        border-radius: 8px;
+        margin: 1%;
+        padding: 2%;
+      "
+    >
+      <div style="display: flex; justify-content: space-between">
+        <h2 onclick="showExperienceDetails()" class="title-text">Experience</h2>
+        <h2 onclick="showProjects()" class="title-text">Project</h2>
+      </div>
+      <h3 class="experience-text">
+        6 month internship in prognoz Technologies.
+      </h3>
+      <h3 class="experience-text">
+        currently working as Software Developer in network people services
+        Technologies.
+      </h3>
+      <h3 class="project-text">in network people services Technologies.</h3>
+      <h3 class="project-text">in Robotec.</h3>
+    </div>
+
+
+
     <script>
       function showIntroduction() {
         const header = document.getElementById("header");
@@ -56,9 +85,15 @@
       const technicalSkillsText =
         document.getElementsByClassName("Technical-skills");
       const educationText = document.getElementsByClassName("education-text");
+      const experienceText = document.getElementsByClassName("experience-text");
+      const projectText = document.getElementsByClassName("project-text");
 
       function showEducationDetails() {
-        for (let i = 0; i < educationText.length && i < technicalSkillsText.length; i++) {
+        for (
+          let i = 0;
+          i < educationText.length && i < technicalSkillsText.length;
+          i++
+        ) {
           educationText[i].style.display = "block";
           technicalSkillsText[i].style.display = "none";
           educationText[i].style.width = "100%";
@@ -71,7 +106,22 @@
           educationText[i].style.display = "none";
           technicalSkillsText[i].style.width = "100%";
         }
-        
+      }
+
+      function showExperienceDetails() {
+        for (let i = 0; i < experienceText.length; i++) {
+          experienceText[i].style.display = "block";
+          projectText[i].style.display = "none";
+          experienceText[i].style.width = "100%";
+        }
+      }
+
+      function showProjects(){
+        for (let i = 0; i < projectText.length; i++) {
+          projectText[i].style.display = "block";
+          experienceText[i].style.display = "none";
+          projectText[i].style.width = "100%";
+        }
       }
     </script>
 
@@ -108,6 +158,13 @@
         display: none;
       }
       .Technical-skills {
+        display: none;
+      }
+      .title-text {
+        height: auto;
+        width: auto;
+      }
+      .experience-text {
         display: none;
       }
     </style>
