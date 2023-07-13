@@ -69,12 +69,16 @@
       <h3 class="project-text" onmouseover="projectList()">
         in network people services Technologies.
       </h3>
-      <h3 class="project-text">in Robotec.</h3>
+      <h3 class="project-text" onclick="robotics()">in Robotec.</h3>
     </div>
 
     <div class="Project">
       <p>parking-android-app</p>
       <p>school-web-app</p>
+    </div>
+
+    <div class="project-robotec" style="display: none;">
+      <p><a href="https://github.com/Bhandekunal16">click on it</a></p>
     </div>
 
     <div>
@@ -100,6 +104,7 @@
       const project = document.getElementsByClassName("Project");
       const greetingText = document.getElementById("greating-text");
       const clockScreen = document.getElementById("clockscreen");
+      const robotic = document.getElementsByClassName("project-robotec");
 
       function showEducationDetails() {
         for (
@@ -187,6 +192,11 @@
         
       }
 
+     function robotics(){
+        for (let i = 0; i < robotic.length; i++) {
+          robotic[i].style.display = "block";
+        }
+      }
       
       
 
