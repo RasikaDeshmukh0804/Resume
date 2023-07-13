@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
   </head>
-  <body style="background-color: #f6f6f6">
+  <body style="background-color: #f6f6f6" onload=" clock()">
     <div class="header">
       <header style="text-align: center" id="header">
         <h1 id="position" onclick="showIntroduction()"><i>Web Developer</i></h1>
@@ -77,6 +77,11 @@
       <p>school-web-app</p>
     </div>
 
+    <div>
+      <h3 id="greating-text"></h3>
+      <h3 id="clockscreen"></h3>
+    </div>
+
     <script>
       function showIntroduction() {
         const header = document.getElementById("header");
@@ -93,6 +98,8 @@
       const experienceText = document.getElementsByClassName("experience-text");
       const projectText = document.getElementsByClassName("project-text");
       const project = document.getElementsByClassName("Project");
+      const greetingText = document.getElementById("greating-text");
+      const clockScreen = document.getElementById("clockscreen");
 
       function showEducationDetails() {
         for (
@@ -135,6 +142,54 @@
           project[i].style.display = "block";
         }
       }
+
+      function clock() {
+        time = new Date().getHours();
+        min = new Date().getMinutes();
+        sec = new Date().getSeconds();
+        setInterval(() => {
+          clockScreen.innerHTML = new Date();
+        }, 1000);
+        greetingText.style =
+          "text-align: center; color: black; font-family: 'Georgia', serif;";
+        clockScreen.style = "text-align: center;color: black";
+        console.log(time);
+        response = () => {
+          return {
+            GoodNight: "good night",
+            GoodAfternoon: "good afternoon",
+            GoodEvening: "good evening",
+            GoodMorning: "good morning",
+          };
+        };
+        switch (true) {
+          case time < 12:
+            return {
+              data: (greetingText.innerHTML = response().GoodMorning),
+            };
+
+          case time < 17:
+            return {
+              data: (greetingText.innerHTML = response().GoodAfternoon),
+            };
+
+          case time < 20:
+            return {
+              data: (greetingText.innerHTML = response().GoodEvening),
+            };
+
+          case time < 24:
+            return {
+              data: (greetingText.innerHTML = response().GoodNight),
+            };
+        }
+
+        
+      }
+
+      
+      
+
     </script>
 
     <style>
